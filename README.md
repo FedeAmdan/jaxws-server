@@ -14,9 +14,9 @@ Request example:
 <soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:ws="http://ws.mulesoft.com/">
    <soapenv:Header/>
    <soapenv:Body>
-      <ws:getHelloWorldAsString>
+      <ws:sayHello>
          <arg0>Fede</arg0>
-      </ws:getHelloWorldAsString>
+      </ws:sayHello>
    </soapenv:Body>
 </soapenv:Envelope>
 ```
@@ -24,9 +24,9 @@ Response example:
 ```xml
 <S:Envelope xmlns:S="http://schemas.xmlsoap.org/soap/envelope/">
    <S:Body>
-      <ns2:getHelloWorldAsStringResponse xmlns:ns2="http://ws.mulesoft.com/">
+      <ns2:sayHelloResponse xmlns:ns2="http://ws.mulesoft.com/">
          <return>Hello Fede</return>
-      </ns2:getHelloWorldAsStringResponse>
+      </ns2:sayHelloResponse>
    </S:Body>
 </S:Envelope>
 ```
