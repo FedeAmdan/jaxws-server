@@ -18,15 +18,15 @@ Request example:
          <arg0>Fede</arg0>
       </ws:getHelloWorldAsString>
    </soapenv:Body>
-</soapenv:Envelope>'
+</soapenv:Envelope>
 ```
 Response example:
 ```xml
-'<S:Envelope xmlns:S="http://schemas.xmlsoap.org/soap/envelope/">
+<S:Envelope xmlns:S="http://schemas.xmlsoap.org/soap/envelope/">
    <S:Body>
       <ns2:getHelloWorldAsStringResponse xmlns:ns2="http://ws.mulesoft.com/">
          <return>Hello Fede</return>
       </ns2:getHelloWorldAsStringResponse>
    </S:Body>
-</S:Envelope>'
+</S:Envelope>
 ```
