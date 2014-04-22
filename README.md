@@ -10,7 +10,8 @@ If you want to run this app, you should:
     WSDL path: http://localhost:8080/webserver/test?wsdl
 
 Request example:
-'<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:ws="http://ws.mulesoft.com/">
+```xml
+<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:ws="http://ws.mulesoft.com/">
    <soapenv:Header/>
    <soapenv:Body>
       <ws:getHelloWorldAsString>
@@ -18,8 +19,9 @@ Request example:
       </ws:getHelloWorldAsString>
    </soapenv:Body>
 </soapenv:Envelope>'
-
+```
 Response example:
+```xml
 '<S:Envelope xmlns:S="http://schemas.xmlsoap.org/soap/envelope/">
    <S:Body>
       <ns2:getHelloWorldAsStringResponse xmlns:ns2="http://ws.mulesoft.com/">
@@ -27,3 +29,4 @@ Response example:
       </ns2:getHelloWorldAsStringResponse>
    </S:Body>
 </S:Envelope>'
+```
