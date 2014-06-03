@@ -9,6 +9,8 @@ If you want to run this app, you should:
 3. The path of the web service will be http://localhost:8080/webserver/test
     WSDL path: http://localhost:8080/webserver/test?wsdl
 
+Echo:
+
 Request example:
 ```xml
 <soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:ws="http://ws.mulesoft.com/">
@@ -25,8 +27,58 @@ Response example:
 <S:Envelope xmlns:S="http://schemas.xmlsoap.org/soap/envelope/">
    <S:Body>
       <ns2:sayHelloResponse xmlns:ns2="http://ws.mulesoft.com/">
-         <return>Hello Fede</return>
+         <return>Fede</return>
       </ns2:sayHelloResponse>
+   </S:Body>
+</S:Envelope>
+```
+
+Random delay:
+
+Request example:
+```xml
+<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:ws="http://ws.mulesoft.com/">
+   <soapenv:Header/>
+   <soapenv:Body>
+      <ws:randomdelay>
+         <arg0>400</arg0>
+      </ws:randomdelay>
+   </soapenv:Body>
+</soapenv:Envelope>
+```
+
+Response example:
+```xml
+<S:Envelope xmlns:S="http://schemas.xmlsoap.org/soap/envelope/">
+   <S:Body>
+      <ns2:randomdelayResponse xmlns:ns2="http://ws.mulesoft.com/">
+         <return>Waited for 163 miliseconds</return>
+      </ns2:randomdelayResponse>
+   </S:Body>
+</S:Envelope>
+```
+
+Strict delay:
+
+Request example:
+```xml
+<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:ws="http://ws.mulesoft.com/">
+   <soapenv:Header/>
+   <soapenv:Body>
+      <ws:strictdelay>
+         <arg0>400</arg0>
+      </ws:strictdelay>
+   </soapenv:Body>
+</soapenv:Envelope>
+```
+
+Response example:
+```xml
+<S:Envelope xmlns:S="http://schemas.xmlsoap.org/soap/envelope/">
+   <S:Body>
+      <ns2:strictdelayResponse xmlns:ns2="http://ws.mulesoft.com/">
+         <return>Waited for 400 miliseconds</return>
+      </ns2:strictdelayResponse>
    </S:Body>
 </S:Envelope>
 ```
