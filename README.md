@@ -9,7 +9,7 @@ If you want to run this app, you should:
 3. The path of the web service will be http://localhost:8080/webserver/test
     WSDL path: http://localhost:8080/webserver/test?wsdl
 
-Echo:
+####Echo:
 
 Request example:
 ```xml
@@ -32,8 +32,9 @@ Response example:
    </S:Body>
 </S:Envelope>
 ```
+---
 
-Random delay:
+####Random delay:
 
 Request example:
 ```xml
@@ -58,7 +59,9 @@ Response example:
 </S:Envelope>
 ```
 
-Strict delay:
+---
+
+####Strict delay:
 
 Request example:
 ```xml
