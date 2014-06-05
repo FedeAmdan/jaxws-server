@@ -11,7 +11,7 @@ If you want to run this app, you should:
 
 ####Echo:
 
-Request example:
+######Request example:
 ```xml
 <soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:ws="http://ws.mulesoft.com/">
    <soapenv:Header/>
@@ -22,7 +22,7 @@ Request example:
    </soapenv:Body>
 </soapenv:Envelope>
 ```
-Response example:
+######Response example:
 ```xml
 <S:Envelope xmlns:S="http://schemas.xmlsoap.org/soap/envelope/">
    <S:Body>
@@ -38,9 +38,9 @@ Response example:
 
 Parameters:
 Miliseconds: miliseconds that will wait.
-Content: content that will return.
+Content: content that will be returned.
 
-#Request example:
+######Request example:
 ```xml
 <soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:ws="http://ws.mulesoft.com/" xmlns:per="http://mulesoft.com/schemas/performance">
    <soapenv:Header/>
@@ -56,7 +56,7 @@ Content: content that will return.
 </soapenv:Envelope>
 ```
 
-#Response example:
+######Response example:
 ```xml
 <S:Envelope xmlns:S="http://schemas.xmlsoap.org/soap/envelope/">
    <S:Body>
@@ -68,47 +68,13 @@ Content: content that will return.
 ```
 ---
 
-####Random delay with content:
-
-Parameters:
-Miliseconds: miliseconds that will wait.
-Content: content that will return.
-
-##Request example:
-```xml
-<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:ws="http://ws.mulesoft.com/" xmlns:per="http://mulesoft.com/schemas/performance">
-   <soapenv:Header/>
-   <soapenv:Body>
-      <ws:randomDelayEcho>
-         <RequestEcho>
-            <per:miliseconds>100</per:miliseconds>
-            <!--Optional:-->
-            <per:content>Hello everybody!</per:content>
-         </RequestEcho>
-      </ws:randomDelayEcho>
-   </soapenv:Body>
-</soapenv:Envelope>
-```
-
-Response example:
-```xml
-<S:Envelope xmlns:S="http://schemas.xmlsoap.org/soap/envelope/">
-   <S:Body>
-      <ns2:randomDelayEchoResponse xmlns:ns2="http://ws.mulesoft.com/" xmlns:ns3="http://mulesoft.com/schemas/performance">
-         <return>Hello everybody!</return>
-      </ns2:randomDelayEchoResponse>
-   </S:Body>
-</S:Envelope>
-```
----
-
 ####Random delay with letters:
 
 Parameters:
 Miliseconds: miliseconds that will wait.
-Content: content that will return.
+Letters: amount of letters that will be returned.
 
-##Request example:
+######Request example:
 ```xml
 <soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:ws="http://ws.mulesoft.com/" xmlns:per="http://mulesoft.com/schemas/performance">
    <soapenv:Header/>
@@ -124,7 +90,7 @@ Content: content that will return.
 </soapenv:Envelope>
 ```
 
-Response example:
+######Response example:
 ```xml
 <S:Envelope xmlns:S="http://schemas.xmlsoap.org/soap/envelope/">
    <S:Body>
@@ -138,7 +104,11 @@ Response example:
 
 ####Strict delay with content:
 
-Request example:
+Parameters:
+Miliseconds: miliseconds that will wait.
+Content: content that will return.
+
+######Request example:
 ```xml
 <soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:ws="http://ws.mulesoft.com/" xmlns:per="http://mulesoft.com/schemas/performance">
    <soapenv:Header/>
@@ -154,7 +124,7 @@ Request example:
 </soapenv:Envelope>
 ```
 
-Response example:
+######Response example:
 ```xml
 <S:Envelope xmlns:S="http://schemas.xmlsoap.org/soap/envelope/">
    <S:Body>
@@ -167,7 +137,11 @@ Response example:
 
 ####Strict delay with letters:
 
-Request example:
+Parameters:
+Miliseconds: miliseconds that will wait.
+Letters: amount of letters that will be returned.
+
+######Request example:
 ```xml
 <soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:ws="http://ws.mulesoft.com/" xmlns:per="http://mulesoft.com/schemas/performance">
    <soapenv:Header/>
@@ -183,7 +157,7 @@ Request example:
 </soapenv:Envelope>
 ```
 
-Response example:
+######Response example:
 ```xml
 <S:Envelope xmlns:S="http://schemas.xmlsoap.org/soap/envelope/">
    <S:Body>
