@@ -16,9 +16,9 @@ Request example:
 <soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:ws="http://ws.mulesoft.com/">
    <soapenv:Header/>
    <soapenv:Body>
-      <ws:sayHello>
-         <arg0>Fede</arg0>
-      </ws:sayHello>
+      <ws:echo>
+         <name>Fede</name>
+      </ws:echo>
    </soapenv:Body>
 </soapenv:Envelope>
 ```
@@ -26,7 +26,7 @@ Response example:
 ```xml
 <S:Envelope xmlns:S="http://schemas.xmlsoap.org/soap/envelope/">
    <S:Body>
-      <ns2:sayHelloResponse xmlns:ns2="http://ws.mulesoft.com/">
+      <ns2:sayHelloResponse xmlns:ns2="http://ws.mulesoft.com/" xmlns:ns3="http://mulesoft.com/schemas/performance">
          <return>Fede</return>
       </ns2:sayHelloResponse>
    </S:Body>
@@ -34,43 +34,58 @@ Response example:
 ```
 ---
 
-####Random delay:
+####Random delay with content:
 
-Request example:
+Parameters:
+Miliseconds: miliseconds that will wait.
+Content: content that will return.
+
+#Request example:
 ```xml
-<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:ws="http://ws.mulesoft.com/">
+<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:ws="http://ws.mulesoft.com/" xmlns:per="http://mulesoft.com/schemas/performance">
    <soapenv:Header/>
    <soapenv:Body>
-      <ws:randomdelay>
-         <arg0>400</arg0>
-      </ws:randomdelay>
+      <ws:randomDelayEcho>
+         <RequestEcho>
+            <per:miliseconds>30</per:miliseconds>
+            <!--Optional:-->
+            <per:content>Hello everybody!</per:content>
+         </RequestEcho>
+      </ws:randomDelayEcho>
    </soapenv:Body>
 </soapenv:Envelope>
 ```
 
-Response example:
+#Response example:
 ```xml
 <S:Envelope xmlns:S="http://schemas.xmlsoap.org/soap/envelope/">
    <S:Body>
       <ns2:randomdelayResponse xmlns:ns2="http://ws.mulesoft.com/">
-         <return>Waited for 163 miliseconds</return>
+         <return>Hello everybody!</return>
       </ns2:randomdelayResponse>
    </S:Body>
 </S:Envelope>
 ```
-
 ---
 
-####Strict delay:
+####Random delay with content:
 
-Request example:
+Parameters:
+Miliseconds: miliseconds that will wait.
+Content: content that will return.
+
+##Request example:
 ```xml
-<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:ws="http://ws.mulesoft.com/">
+<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:ws="http://ws.mulesoft.com/" xmlns:per="http://mulesoft.com/schemas/performance">
    <soapenv:Header/>
    <soapenv:Body>
-      <ws:strictdelay>
-         <arg0>400</arg0>
-      </ws:strictdelay>
+      <ws:randomDelayEcho>
+         <RequestEcho>
+            <per:miliseconds>100</per:miliseconds>
+            <!--Optional:-->
+            <per:content>Hello everybody!</per:content>
+         </RequestEcho>
+      </ws:randomDelayEcho>
    </soapenv:Body>
 </soapenv:Envelope>
 ```
@@ -79,9 +94,102 @@ Response example:
 ```xml
 <S:Envelope xmlns:S="http://schemas.xmlsoap.org/soap/envelope/">
    <S:Body>
-      <ns2:strictdelayResponse xmlns:ns2="http://ws.mulesoft.com/">
-         <return>Waited for 400 miliseconds</return>
-      </ns2:strictdelayResponse>
+      <ns2:randomDelayEchoResponse xmlns:ns2="http://ws.mulesoft.com/" xmlns:ns3="http://mulesoft.com/schemas/performance">
+         <return>Hello everybody!</return>
+      </ns2:randomDelayEchoResponse>
+   </S:Body>
+</S:Envelope>
+```
+---
+
+####Random delay with letters:
+
+Parameters:
+Miliseconds: miliseconds that will wait.
+Content: content that will return.
+
+##Request example:
+```xml
+<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:ws="http://ws.mulesoft.com/" xmlns:per="http://mulesoft.com/schemas/performance">
+   <soapenv:Header/>
+   <soapenv:Body>
+      <ws:randomDelayLetters>
+         <RequestLetter>
+            <per:miliseconds>300</per:miliseconds>
+            <!--Optional:-->
+            <per:letters>4</per:letters>
+         </RequestLetter>
+      </ws:randomDelayLetters>
+   </soapenv:Body>
+</soapenv:Envelope>
+```
+
+Response example:
+```xml
+<S:Envelope xmlns:S="http://schemas.xmlsoap.org/soap/envelope/">
+   <S:Body>
+      <ns2:randomDelayLettersResponse xmlns:ns2="http://ws.mulesoft.com/" xmlns:ns3="http://mulesoft.com/schemas/performance">
+         <return>ffff</return>
+      </ns2:randomDelayLettersResponse>
+   </S:Body>
+</S:Envelope>
+```
+---
+
+####Strict delay with content:
+
+Request example:
+```xml
+<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:ws="http://ws.mulesoft.com/" xmlns:per="http://mulesoft.com/schemas/performance">
+   <soapenv:Header/>
+   <soapenv:Body>
+      <ws:strictDelayEcho>
+         <RequestEcho>
+            <per:miliseconds>400</per:miliseconds>
+            <!--Optional:-->
+            <per:content>Hello everybody!</per:content>
+         </RequestEcho>
+      </ws:strictDelayEcho>
+   </soapenv:Body>
+</soapenv:Envelope>
+```
+
+Response example:
+```xml
+<S:Envelope xmlns:S="http://schemas.xmlsoap.org/soap/envelope/">
+   <S:Body>
+      <ns2:strictDelayEchoResponse xmlns:ns2="http://ws.mulesoft.com/" xmlns:ns3="http://mulesoft.com/schemas/performance">
+         <return>Hello everybody!</return>
+      </ns2:strictDelayEchoResponse>
+   </S:Body>
+</S:Envelope>
+```
+
+####Strict delay with letters:
+
+Request example:
+```xml
+<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:ws="http://ws.mulesoft.com/" xmlns:per="http://mulesoft.com/schemas/performance">
+   <soapenv:Header/>
+   <soapenv:Body>
+      <ws:strictDelayLetters>
+         <RequestLetter>
+            <per:miliseconds>300</per:miliseconds>
+            <!--Optional:-->
+            <per:letters>5</per:letters>
+         </RequestLetter>
+      </ws:strictDelayLetters>
+   </soapenv:Body>
+</soapenv:Envelope>
+```
+
+Response example:
+```xml
+<S:Envelope xmlns:S="http://schemas.xmlsoap.org/soap/envelope/">
+   <S:Body>
+      <ns2:strictDelayLettersResponse xmlns:ns2="http://ws.mulesoft.com/" xmlns:ns3="http://mulesoft.com/schemas/performance">
+         <return>fffff</return>
+      </ns2:strictDelayLettersResponse>
    </S:Body>
 </S:Envelope>
 ```
